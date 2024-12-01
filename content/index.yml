@@ -1,32 +1,41 @@
-title: Nuxt UI Pro - Landing template
-description: Nuxt UI Pro is a collection of premium Vue components built on top of Nuxt UI to create beautiful & responsive Nuxt applications in minutes.
+title: Raphael Charpentier - Développeur Full-Stack
+description: Développeur web Full-Stack. Passionné par le développement web, je suis spécialisé dans la création de sites web et d'applications web modernes et performantes.
 hero:
-  title: Build your landing in seconds
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+  title: Développeur Full-Stack.
   headline:
-    label: Made with Nuxt UI Pro
-    to: https://ui.nuxt.com/pro
-    icon: i-heroicons-arrow-top-right-on-square-20-solid
+    label: Étudiant à Epitech
+    icon: i-heroicons-academic-cap
   links:
-    - label: Get started
+    - label: Mes projets
       icon: i-heroicons-arrow-right-20-solid
       trailing: true
       to: '#features'
       size: xl
-    - label: Use this template
-      icon: i-simple-icons-github
+    - label: Me contacter
+      icon: i-heroicons-envelope
       size: xl
       color: gray
       to: https://github.com/nuxt-ui-pro/landing
       target: _blank
 logos:
-  title: Trusted by the world's best
+  title: Technologies utilisées
   icons:
-    - i-simple-icons-amazonaws
-    - i-simple-icons-heroku
-    - i-simple-icons-netlify
-    - i-simple-icons-vercel
-    - i-simple-icons-cloudflare
+    - name: i-simple-icons-angular
+      text: Angular
+    - name: i-simple-icons-react
+      text: React
+    - name: i-simple-icons-vuedotjs
+      text: Vue.js
+    - name: i-simple-icons-nuxtdotjs
+      text: Nuxt.js
+    - name: i-simple-icons-adonisjs
+      text: Adonis.js
+    - name: i-simple-icons-python
+      text: Python
+    - name: i-simple-icons-oracle
+      text: Java
+    - name: i-simple-icons-mysql
+      text: MySQL
 features:
   headline: Features
   title: Why choose our service?

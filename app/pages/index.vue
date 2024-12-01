@@ -11,10 +11,14 @@ useSeoMeta({
 
 <template>
   <div>
+    <div class="hero" />
     <ULandingHero
       :title="page.hero.title"
       :description="page.hero.description"
       :links="page.hero.links"
+      orientation="horizontal"
+      :ui="{ title: 'text-6xl font-black tracking-tight text-white mix-blend-difference sm:text-8xl' }"
+      class="content"
     >
       <template #headline>
         <UBadge
@@ -23,40 +27,38 @@ useSeoMeta({
           size="lg"
           class="relative rounded-full font-semibold"
         >
-          <NuxtLink
-            :to="page.hero.headline.to"
-            target="_blank"
-            class="focus:outline-none"
-            tabindex="-1"
-          >
-            <span
-              class="absolute inset-0"
-              aria-hidden="true"
-            />
-          </NuxtLink>
-
-          {{ page.hero.headline.label }}
-
           <UIcon
             v-if="page.hero.headline.icon"
             :name="page.hero.headline.icon"
-            class="ml-1 w-4 h-4 pointer-events-none"
+            class="mr-2 w-4 h-4 pointer-events-none"
           />
+
+          {{ page.hero.headline.label }}
         </UBadge>
       </template>
 
-      <ImagePlaceholder />
+      <NuxtImg
+        src="/portrait.png"
+        alt="Raphael Charpentier"
+        class="w-4/5 border-2 border-gray-800 rounded-full drop-shadow-lg backdrop-blur-3xl backdrop-grayscale"
+      />
 
       <ULandingLogos
         :title="page.logos.title"
         align="center"
+        :ui="{ images: 'mx-auto mt-10 flex flex-wrap items-center justify-center gap-8' }"
+        style="grid-column: span 2"
       >
-        <UIcon
+        <UTooltip
           v-for="icon in page.logos.icons"
           :key="icon"
-          :name="icon"
-          class="w-12 h-12 lg:w-16 lg:h-16 flex-shrink-0 text-gray-900 dark:text-white"
-        />
+          :text="icon.text"
+        >
+          <UIcon
+            :name="icon.name"
+            class="w-10 h-10 lg:w-12 lg:h-12 text-gray-900 dark:text-white"
+          />
+        </UTooltip>
       </ULandingLogos>
     </ULandingHero>
 
@@ -143,3 +145,79 @@ useSeoMeta({
     </ULandingSection>
   </div>
 </template>
+
+<style scoped>
+.hero {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  --stripes: repeating-linear-gradient(
+    100deg,
+    black 0%,
+    black 7%,
+    transparent 10%,
+    transparent 12%,
+    black 16%
+  );
+
+  --rainbow: repeating-linear-gradient(
+    100deg,
+    #2b2eff 10%,
+    #f3450b 15%,
+    #2b2eff 20%,
+    #0f0278 25%,
+    #2b2eff 30%
+  );
+  background-image: var(--stripes), var(--rainbow);
+  background-size: 300%, 200%;
+  background-position: 50% 50%, 50% 50%;
+
+  opacity: 0.7;
+  filter: blur(10px);
+
+  mask-image: radial-gradient(ellipse at 100% 0%, black 40%, transparent 70%);
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--stripes), var(--rainbow);
+    background-size: 200%, 100%;
+    animation: smoothBg 60s linear infinite;
+    background-attachment: fixed;
+    mix-blend-mode: difference;
+  }
+}
+
+.light .hero {
+  filter: invert(1);
+
+  --stripes: repeating-linear-gradient(
+    100deg,
+    white 0%,
+    white 7%,
+    transparent 10%,
+    transparent 12%,
+    white 16%
+  );
+}
+
+.content {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes smoothBg {
+  from {
+    background-position: 50% 50%, 50% 50%;
+  }
+  to {
+    background-position: 350% 50%, 350% 50%;
+  }
+}
+</style>

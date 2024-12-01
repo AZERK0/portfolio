@@ -37,8 +37,8 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
 <template>
   <UHeader :links="links">
     <template #logo>
-      Nuxt UI Pro <UBadge
-        label="Landing"
+      Raphael Charpentier <UBadge
+        label="Développeur Full-Stack"
         variant="subtle"
         class="mb-0.5"
       />
