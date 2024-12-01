@@ -37,11 +37,13 @@ useSeoMeta({
         </UBadge>
       </template>
 
-      <NuxtImg
-        src="/portrait.png"
-        alt="Raphael Charpentier"
-        class="w-4/5 border-2 border-gray-800 rounded-full drop-shadow-lg backdrop-blur-3xl backdrop-grayscale"
-      />
+      <div class="flex justify-end">
+        <NuxtImg
+          src="/portrait.png"
+          alt="Raphael Charpentier"
+          class="w-4/5 border-2 border-gray-800 rounded-full drop-shadow-lg backdrop-blur-3xl backdrop-grayscale"
+        />
+      </div>
 
       <ULandingLogos
         :title="page.logos.title"
