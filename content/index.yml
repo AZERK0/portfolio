@@ -37,7 +37,7 @@ logos:
       text: MySQL
 studies:
   headline: Études
-  title: Quels sont mes études ?
+  title: Mon parcours scolaire
   description: Passionné d'informatique depuis mon plus jeune âge, je poursuis actuellement mes études en informatique à Epitech. J'ai eu l'opportunité de développer une expérience à travers divers projets personnels, que je complète aujourd'hui par un travail en équipe.
   items:
     - title: Lycée, 2020 - 2023
@@ -58,21 +58,19 @@ pricing:
   description: Contactez-moi pour obtenir un devis personnalisé.
   plan:
     title: Freelance Web
-    description: Développement de sites web et d'applications web.
+    description: Développement de sites web et d'applications web sur mesure.
     price: 250€
     cycle: /jour
     highlight: true
     align: top
     button:
-      label: Get Started
+      label: Me contacter
+      to: ?contactPopup=true
     features:
-      - 10 GB Storage
-      - 10 Email Accounts
-      - 10 Domains
-      - 10 Websites
-      - 10 Databases
-      - 10 SSL Certificates
-      - 10 Support Tickets
+      - Conception
+      - Développement
+      - Tests
+      - Déploiement
 testimonials:
   headline: Testimonials
   title: What our customers are saying.

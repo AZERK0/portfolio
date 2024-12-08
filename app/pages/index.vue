@@ -72,7 +72,10 @@ useSeoMeta({
       :description="page.studies.description"
       :headline="page.studies.headline"
     >
-      <div class="flex flex-col sm:flex-row gap-8 scroll-mt-[calc(var(--header-height)+140px+128px+96px)]">
+      <div
+        id="studies"
+        class="flex flex-col sm:flex-row gap-8 scroll-mt-[calc(var(--header-height)+140px+128px+96px)]"
+      >
         <template
           v-for="(item, index) in page.studies.items"
           :key="index"
@@ -115,10 +118,13 @@ useSeoMeta({
       :headline="page.pricing.headline"
       class="pricing-bg"
     >
-      <div class="flex justify-center">
+      <div
+        id="pricing"
+        class="flex justify-center scroll-mt-[calc(var(--header-height)+140px+128px+96px)]"
+      >
         <UPricingCard
           v-bind="page.pricing.plan"
-          class="w-fit"
+          class="md:w-1/2 lg:w-1/3"
         />
       </div>
     </ULandingSection>

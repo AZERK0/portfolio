@@ -3,12 +3,12 @@ const nuxtApp = useNuxtApp()
 const { activeHeadings, updateHeadings } = useScrollspy()
 
 const links = computed(() => [{
-  label: 'Features',
-  to: '#features',
+  label: 'Études',
+  to: '#studies',
   icon: 'i-heroicons-cube-transparent',
-  active: activeHeadings.value.includes('features') && !activeHeadings.value.includes('pricing')
+  active: activeHeadings.value.includes('studies') && !activeHeadings.value.includes('pricing')
 }, {
-  label: 'Pricing',
+  label: 'Tarifs',
   to: '#pricing',
   icon: 'i-heroicons-credit-card',
   active: activeHeadings.value.includes('pricing') && !activeHeadings.value.includes('testimonials')
@@ -16,7 +16,7 @@ const links = computed(() => [{
   label: 'Testimonials',
   to: '#testimonials',
   icon: 'i-heroicons-academic-cap',
-  active: activeHeadings.value.includes('testimonials')
+  active: activeHeadings.value.includes('testimonials') && !activeHeadings.value.includes('faq')
 }, {
   label: 'FAQ',
   to: '#faq',
@@ -26,7 +26,7 @@ const links = computed(() => [{
 
 nuxtApp.hooks.hookOnce('page:finish', () => {
   updateHeadings([
-    document.querySelector('#features'),
+    document.querySelector('#studies'),
     document.querySelector('#pricing'),
     document.querySelector('#testimonials'),
     document.querySelector('#faq')
