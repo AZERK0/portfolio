@@ -10,21 +10,23 @@ export default defineNuxtConfig({
     '@nuxt/ui'
   ],
 
+  devtools: {
+    enabled: true
+  },
+
   routeRules: {
     // Temporary workaround for prerender regression. see https://github.com/nuxt/nuxt/issues/27490
     '/': { prerender: true }
   },
 
-  devtools: {
-    enabled: true
+  future: {
+    compatibilityVersion: 4
   },
+
+  compatibilityDate: '2024-07-11',
 
   typescript: {
     strict: false
-  },
-
-  future: {
-    compatibilityVersion: 4
   },
 
   eslint: {
@@ -36,5 +38,12 @@ export default defineNuxtConfig({
     }
   },
 
-  compatibilityDate: '2024-07-11'
+  icon: {
+    customCollections: [
+      {
+        prefix: 'my-icon',
+        dir: './assets/my-icons'
+      }
+    ]
+  }
 })

@@ -44,59 +44,35 @@ studies:
       description: |
         Baccalauréat Général : Mention Bien, Mention Européenne<br>
         Spécialités : Maths, NSI, Physique-chimie
-    - title: Reliable
-      description: Magna Lorem ex cillum fugiat ad enim aute irure sit duis minim.
+      icon: my-icon:ara
+      image: /studies/aragon.webp
+    - title: Epitech, 2023 - 2028
+      description: |
+        Expert en technologies de l’information<br>
+        - Pédagogie axée sur l'apprentissage par projet.
+      icon: my-icon:epitech
+      image: /studies/epitech.webp
 pricing:
-  headline: Pricing
-  title: A plan for every need
-  description: Pariatur laborum dolor ea commodo sit aute aliquip qui et cillum excepteur.
-  plans:
-    - title: Basic
-      description: A basic plan for individuals.
-      price: $9.99
-      align: top
-      button:
-        label: Get Started
-        color: gray
-      features:
-        - 1 GB Storage
-        - 1 Email Account
-        - 1 Domain
-        - 1 Website
-        - 1 Database
-        - 1 SSL Certificate
-        - 1 Support Ticket
-    - title: Standard
-      description: A standard plan for small teams.
-      price: $19.99
-      highlight: true
-      scale: true
-      align: top
-      button:
-        label: Get Started
-      features:
-        - 10 GB Storage
-        - 10 Email Accounts
-        - 10 Domains
-        - 10 Websites
-        - 10 Databases
-        - 10 SSL Certificates
-        - 10 Support Tickets
-    - title: Premium
-      description: A premium plan for large teams.
-      price: $29.99
-      align: top
-      button:
-        label: Get Started
-        color: gray
-      features:
-        - 100 GB Storage
-        - 100 Email Accounts
-        - 100 Domains
-        - 100 Websites
-        - 100 Databases
-        - 100 SSL Certificates
-        - 100 Support Tickets
+  headline: Tarifs
+  title: Quels sont mes tarifs ?
+  description: Contactez-moi pour obtenir un devis personnalisé.
+  plan:
+    title: Freelance Web
+    description: Développement de sites web et d'applications web.
+    price: 250€
+    cycle: /jour
+    highlight: true
+    align: top
+    button:
+      label: Get Started
+    features:
+      - 10 GB Storage
+      - 10 Email Accounts
+      - 10 Domains
+      - 10 Websites
+      - 10 Databases
+      - 10 SSL Certificates
+      - 10 Support Tickets
 testimonials:
   headline: Testimonials
   title: What our customers are saying.

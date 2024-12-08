@@ -77,14 +77,29 @@ useSeoMeta({
           v-for="(item, index) in page.studies.items"
           :key="index"
         >
-          <ULandingCard
-            v-bind="item"
+          <UChip
             class="flex-1"
+            color="green"
+            position="top-left"
+            :show="index === page.studies.items.length - 1"
+            :ui="{ base: 'absolute rounded-full ring-1 ring-white dark:ring-gray-900 flex items-center justify-center text-white dark:text-gray-900 font-medium whitespace-nowrap animate-ping transform-none' }"
           >
-            <template #description>
-              <span v-html="item.description" />
-            </template>
-          </ULandingCard>
+            <ULandingCard
+              v-bind="item"
+              :ui="{ icon: { base: 'w-20 h-20 -my-7 flex-shrink-0 text-gray-900 dark:text-white' } }"
+              class="h-full"
+              orientation="horizontal"
+            >
+              <template #description>
+                <span v-html="item.description" />
+              </template>
+              <NuxtImg
+                v-if="item.image"
+                :src="item.image"
+                class="w-full rounded-md"
+              />
+            </ULandingCard>
+          </UChip>
           <UDivider
             v-if="index < page.studies.items.length - 1"
             icon="i-heroicons-arrow-right"
@@ -98,18 +113,14 @@ useSeoMeta({
       :title="page.pricing.title"
       :description="page.pricing.description"
       :headline="page.pricing.headline"
+      class="pricing-bg"
     >
-      <UPricingGrid
-        id="pricing"
-        compact
-        class="scroll-mt-[calc(var(--header-height)+140px+128px+96px)]"
-      >
+      <div class="flex justify-center">
         <UPricingCard
-          v-for="(plan, index) in page.pricing.plans"
-          :key="index"
-          v-bind="plan"
+          v-bind="page.pricing.plan"
+          class="w-fit"
         />
-      </UPricingGrid>
+      </div>
     </ULandingSection>
 
     <ULandingSection
@@ -242,5 +253,11 @@ useSeoMeta({
   to {
     background-position: 350% 50%, 350% 50%;
   }
+}
+
+.pricing-bg {
+  background:
+    linear-gradient(180deg, transparent 82%, rgba(9,9,11,1) 100%),
+    radial-gradient(circle at 50% 90%, #f3450b 10%, rgba(43, 46, 255, 0.5) 30%, transparent 40%);
 }
 </style>
