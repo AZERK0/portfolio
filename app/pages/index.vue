@@ -17,7 +17,7 @@ useSeoMeta({
       :description="page.hero.description"
       :links="page.hero.links"
       orientation="horizontal"
-      :ui="{ title: 'text-6xl font-black tracking-tight text-white mix-blend-difference sm:text-8xl' }"
+      :ui="{ title: 'text-5xl font-black tracking-tight text-white mix-blend-difference sm:text-7xl' }"
       class="content"
     >
       <template #headline>
@@ -37,11 +37,14 @@ useSeoMeta({
         </UBadge>
       </template>
 
-      <div class="flex justify-end">
+      <div class="relative flex justify-end">
+        <div
+          class="portrait-background absolute w-4/5 h-full rounded-full mix-blend-difference bg-"
+        />
         <NuxtImg
-          src="/portrait.png"
+          src="/portrait.webp"
           alt="Raphael Charpentier"
-          class="w-4/5 border-2 border-gray-800 rounded-full drop-shadow-lg backdrop-blur-3xl backdrop-grayscale"
+          class="w-4/5 h-auto border-2 border-gray-600 rounded-full drop-shadow-lg object-contain"
         />
       </div>
 
@@ -49,7 +52,7 @@ useSeoMeta({
         :title="page.logos.title"
         align="center"
         :ui="{ images: 'mx-auto mt-10 flex flex-wrap items-center justify-center gap-8' }"
-        style="grid-column: span 2"
+        class="sm:col-span-2"
       >
         <UTooltip
           v-for="icon in page.logos.icons"
@@ -65,20 +68,30 @@ useSeoMeta({
     </ULandingHero>
 
     <ULandingSection
-      :title="page.features.title"
-      :description="page.features.description"
-      :headline="page.features.headline"
+      :title="page.studies.title"
+      :description="page.studies.description"
+      :headline="page.studies.headline"
     >
-      <UPageGrid
-        id="features"
-        class="scroll-mt-[calc(var(--header-height)+140px+128px+96px)]"
-      >
-        <ULandingCard
-          v-for="(item, index) in page.features.items"
+      <div class="flex flex-col sm:flex-row gap-8 scroll-mt-[calc(var(--header-height)+140px+128px+96px)]">
+        <template
+          v-for="(item, index) in page.studies.items"
           :key="index"
-          v-bind="item"
-        />
-      </UPageGrid>
+        >
+          <ULandingCard
+            v-bind="item"
+            class="flex-1"
+          >
+            <template #description>
+              <span v-html="item.description" />
+            </template>
+          </ULandingCard>
+          <UDivider
+            v-if="index < page.studies.items.length - 1"
+            icon="i-heroicons-arrow-right"
+            class="w-20"
+          />
+        </template>
+      </div>
     </ULandingSection>
 
     <ULandingSection
@@ -212,6 +225,14 @@ useSeoMeta({
   inset: 0;
   width: 100%;
   height: 100%;
+}
+
+.portrait-background {
+  background: #643500
+}
+
+.dark .portrait-background {
+  background: #9296ff
 }
 
 @keyframes smoothBg {

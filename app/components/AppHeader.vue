@@ -37,20 +37,17 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
 <template>
   <UHeader :links="links">
     <template #logo>
-      Raphael Charpentier <UBadge
-        label="Développeur Full-Stack"
-        variant="subtle"
-        class="mb-0.5"
-      />
+      Raphael Charpentier
     </template>
 
     <template #right>
       <UButton
-        label="Sign in"
+        label="Me contacter"
         color="white"
         variant="ghost"
         trailing-icon="i-heroicons-arrow-right-20-solid"
         class="hidden lg:flex"
+        to="?contactPopup=true"
       />
     </template>
 
@@ -60,14 +57,11 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
       <UDivider class="my-6" />
 
       <UButton
-        label="Sign in"
+        label="Me contacter"
         color="white"
         block
         class="mb-3"
-      />
-      <UButton
-        label="Get started"
-        block
+        to="?contactPopup=true"
       />
     </template>
   </UHeader>
