@@ -11,12 +11,12 @@ const links = computed(() => [{
   label: 'Tarifs',
   to: '#pricing',
   icon: 'i-heroicons-credit-card',
-  active: activeHeadings.value.includes('pricing') && !activeHeadings.value.includes('testimonials')
+  active: activeHeadings.value.includes('pricing') && !activeHeadings.value.includes('projects')
 }, {
-  label: 'Testimonials',
-  to: '#testimonials',
+  label: 'Projets',
+  to: '#projects',
   icon: 'i-heroicons-academic-cap',
-  active: activeHeadings.value.includes('testimonials') && !activeHeadings.value.includes('faq')
+  active: activeHeadings.value.includes('projects') && !activeHeadings.value.includes('faq')
 }, {
   label: 'FAQ',
   to: '#faq',
