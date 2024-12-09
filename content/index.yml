@@ -21,8 +21,6 @@ logos:
   icons:
     - name: i-simple-icons-angular
       text: Angular
-    - name: i-simple-icons-react
-      text: React
     - name: i-simple-icons-vuedotjs
       text: Vue.js
     - name: i-simple-icons-nuxtdotjs
@@ -31,10 +29,14 @@ logos:
       text: Adonis.js
     - name: i-simple-icons-python
       text: Python
+    - name: i-simple-icons-cplusplus
+      text: C++ / C
     - name: i-simple-icons-oracle
       text: Java
     - name: i-simple-icons-mysql
       text: MySQL
+    - name: i-simple-icons-figma
+      text: Figma
 studies:
   headline: Études
   title: Mon parcours scolaire
@@ -71,59 +73,39 @@ pricing:
       - Développement
       - Tests
       - Déploiement
-testimonials:
-  headline: Testimonials
-  title: What our customers are saying.
-  description: Proident sunt exercitation minim laborum enim laboris labore esse.
+projects:
+  headline: Projets
+  title: Mes projets
+  description: Découvrez mes derniers projets dans le développement.
   items:
-    - quote: Nostrud tempor sunt fugiat. Dolor in sint dolore labore non occaecat adipisicing Lorem labore ullamco enim excepteur. In fugiat Lorem sit velit id veniam esse eiusmod non ea voluptate cupidatat reprehenderit ullamco dolore. Mollit laborum occaecat aliquip.
-      author:
-        name: Rose Roberson
-        description: CEO at Company
-        avatar:
-          src: https://i.pravatar.cc/120?img=1
-          loading: lazy
-    - quote: Eiusmod dolor aute ut nulla pariatur officia consequat aute amet exercitation.
-      author:
-        name: Chace Rodgers
-        description: CEO at Company
-        avatar:
-          src: https://i.pravatar.cc/120?img=7
-          loading: lazy
-    - quote: Id duis velit enim officia ad nisi incididunt magna ex dolor minim deserunt dolor. Esse incididunt cillum nostrud esse do quis amet labore amet nulla eiusmod amet nulla Lorem. Incididunt ex voluptate irure officia laboris ea proident est qui.
-      author:
-        name: Cornelius Sheppard
-        description: CEO at Company
-        avatar:
-          src: https://i.pravatar.cc/120?img=3
-          loading: lazy
-    - quote: Velit consectetur in adipisicing culpa eiusmod commodo eu ex dolore. Officia irure nisi dolor dolore velit fugiat. Aliqua sint aliqua aute elit eu sunt.
-      author:
-        name: Destinee Woods
-        description: CEO at Company
-        avatar:
-          src: https://i.pravatar.cc/120?img=5
-          loading: lazy
-    - quote: Proident quis deserunt qui ex exercitation veniam id Lorem est cupidatat ipsum irure aliquip ad.
-      author:
-        name: Kaleb Mccormick
-        description: CEO at Company
-        avatar:
-          src: https://i.pravatar.cc/120?img=8
-          loading: lazy
-    - quote: Magna officia quis ea ea in officia non voluptate ipsum culpa do labore sunt. Aute est dolore commodo sint officia ad laboris dolor magna aliquip exercitation tempor commodo.
-      author:
-        name: Jazmin Mccall
-        description: CEO at Company
-        avatar:
-          src: https://i.pravatar.cc/120?img=9
-          loading: lazy
+    - title: Grossify (Nuxt.js, Adonis.js)
+      description: |
+        Marketplace dédiée aux grossistes et aux restaurateurs :<br>
+          - Permet aux restaurateurs, grâce à l'IA et à des outils de recherche, de trouver les grossistes les mieux adaptés à leurs besoins spécifiques et les plus économiques<br>
+          - Offre aux grossistes la possibilité d'augmenter leur visibilité et d'attirer de nouveaux clientsMarketplace
+      image: /projects/grossify/home.webp
+      badge:
+        label: Nouveau
+        color: green
+      date: Août, 2024 - Aujourd'hui
+    - title: Finalyzing (Angular, Flask)
+      description: |
+        Site web offrant une suite complète d'outils d'analyse financière, organisé autour de trois axes principaux :<br>
+          - Analyse de +150 000 actions à travers le monde, avec accès aux données fondamentales et techniques<br>
+          - Analyse de ses portefeuilles d’investissement grâce à des statistiques puissantes et variées<br>
+          - Consultation des données macroéconomiques actuelles et historiques de +215 pays
+      image: /projects/finalyzing/home.webp
+      badge:
+        label: Perso
+        color: blue
+      date: Jul., 2022 - Fev, 2024
 cta:
   title: Envie de travailler ensemble ?
   description: Contactez-moi dès maintenant.
   links:
     - label: Me contacter
       size: xl
+      to: ?contactPopup=true
 faq:
   title: Frequently asked questions
   description: Culpa consectetur dolor pariatur commodo aliqua amet tempor nisi enim deserunt elit cillum.

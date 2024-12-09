@@ -43,6 +43,7 @@ useSeoMeta({
         />
         <NuxtImg
           src="/portrait.webp"
+          format="webp"
           alt="Raphael Charpentier"
           class="w-4/5 h-auto border-2 border-gray-600 rounded-full drop-shadow-lg object-contain"
         />
@@ -99,6 +100,7 @@ useSeoMeta({
               <NuxtImg
                 v-if="item.image"
                 :src="item.image"
+                format="webp"
                 class="w-full rounded-md"
               />
             </ULandingCard>
@@ -130,22 +132,25 @@ useSeoMeta({
     </ULandingSection>
 
     <ULandingSection
-      :headline="page.testimonials.headline"
-      :title="page.testimonials.title"
-      :description="page.testimonials.description"
+      :headline="page.projects.headline"
+      :title="page.projects.title"
+      :description="page.projects.description"
     >
-      <UPageColumns
-        id="testimonials"
-        class="xl:columns-4 scroll-mt-[calc(var(--header-height)+140px+128px+96px)]"
+      <UBlogList
+        id="projects"
+        orientation="horizontal"
+        class="scroll-mt-[calc(var(--header-height)+140px+128px+96px)]"
       >
-        <div
-          v-for="(testimonial, index) in page.testimonials.items"
+        <UBlogPost
+          v-for="(project, index) in page.projects.items"
           :key="index"
-          class="break-inside-avoid"
+          v-bind="project"
         >
-          <ULandingTestimonial v-bind="testimonial" />
-        </div>
-      </UPageColumns>
+          <template #description>
+            <span v-html="project.description" />
+          </template>
+        </UBlogPost>
+      </UBlogList>
     </ULandingSection>
 
     <ULandingSection class="bg-primary-50 dark:bg-primary-400 dark:bg-opacity-10">
