@@ -16,20 +16,14 @@ const links = computed(() => [{
   label: 'Projets',
   to: '#projects',
   icon: 'i-heroicons-academic-cap',
-  active: activeHeadings.value.includes('projects') && !activeHeadings.value.includes('faq')
-}, {
-  label: 'FAQ',
-  to: '#faq',
-  icon: 'i-heroicons-question-mark-circle',
-  active: activeHeadings.value.includes('faq')
+  active: activeHeadings.value.includes('projects')
 }])
 
 nuxtApp.hooks.hookOnce('page:finish', () => {
   updateHeadings([
     document.querySelector('#studies'),
     document.querySelector('#pricing'),
-    document.querySelector('#projects'),
-    document.querySelector('#faq')
+    document.querySelector('#projects')
   ])
 })
 </script>
