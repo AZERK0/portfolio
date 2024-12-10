@@ -75,7 +75,7 @@ useSeoMeta({
     >
       <div
         id="studies"
-        class="flex flex-col sm:flex-row gap-8 scroll-mt-[calc(var(--header-height)+140px+128px+96px)]"
+        class="flex flex-col sm:flex-row gap-8 scroll-mt-[calc(var(--header-height)+140px+128px+38px)]"
       >
         <template
           v-for="(item, index) in page.studies.items"
@@ -122,7 +122,7 @@ useSeoMeta({
     >
       <div
         id="pricing"
-        class="flex justify-center scroll-mt-[calc(var(--header-height)+140px+128px+96px)]"
+        class="flex justify-center scroll-mt-[calc(var(--header-height)+140px+128px)]"
       >
         <UPricingCard
           v-bind="page.pricing.plan"
@@ -139,7 +139,7 @@ useSeoMeta({
       <UBlogList
         id="projects"
         orientation="horizontal"
-        class="scroll-mt-[calc(var(--header-height)+140px+128px+96px)]"
+        class="scroll-mt-[calc(var(--header-height)+140px+128px)]"
       >
         <UBlogPost
           v-for="(project, index) in page.projects.items"

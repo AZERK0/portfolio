@@ -9,7 +9,7 @@ hero:
     - label: Mes projets
       icon: i-heroicons-arrow-right-20-solid
       trailing: true
-      to: '#features'
+      to: '#projects'
       size: xl
     - label: Me contacter
       icon: i-heroicons-envelope
@@ -88,6 +88,17 @@ projects:
         label: Nouveau
         color: green
       date: Août, 2024 - Aujourd'hui
+    - title: GT3 Event - 10K joueurs (Python)
+      description: |
+        Serveur de course pour Assetto Corsa pour une communauté de 10 000 joueurs :<br>
+          - Permet aux joueurs de participer à des événements de course automobile en ligne<br>
+          - Choix de la piste par vote<br>
+          - Gestion des inscriptions, des courses et des classements
+      image: /projects/assetto-corsa-event/server.webp
+      badge:
+        label: Perso
+        color: blue
+      date: Oct., 2024
     - title: Finalyzing (Angular, Flask)
       description: |
         Site web offrant une suite complète d'outils d'analyse financière, organisé autour de trois axes principaux :<br>
@@ -99,6 +110,28 @@ projects:
         label: Perso
         color: blue
       date: Jul., 2022 - Fev, 2024
+    - title: My Hunter (C)
+      description: |
+        Jeu vidéo en C :<br>
+          - Jeu de tir à la première personne inspiré du jeu CS:GO<br>
+          - Développé en C, avec la bibliothèque graphique CSFML<br>
+          - Des animations fluides et des graphismes de qualité, adaptés aux réglages de chaque joueur
+      image: /projects/my-hunter/game.webp
+      badge:
+        label: Epitech
+        color: red
+      date: Mars, 2024
+    - title: NeuraStock A.I. (Python, TensorFlow, PostgreSQL)
+      description: |
+        Intelligence artificielle entraînée sur 10 000 cotations boursières à travers le monde.<br>
+        Utilisation d'API et d'une base de données PostgreSQL pour la récupération des données, suivie d'un traitement et d'un nettoyage approfondis.<br>
+        Ces données sont ensuite passées dans un modèle Transformer développé en Python avec TensorFlow et Keras,
+        avant d'être testées à l'aide d'outils de backtest intégrant de nombreuses statistiques.
+      image: /projects/neurastock/benefit.webp
+      badge:
+        label: Perso
+        color: blue
+      date: Mai, 2020 - Sept., 2021
 cta:
   title: Envie de travailler ensemble ?
   description: Contactez-moi dès maintenant.
