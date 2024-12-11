@@ -28,7 +28,7 @@
         :ui="{ rounded: 'rounded-md', font: 'font-extrabold' }"
         icon="i-simple-icons-malt"
         size="lg"
-        color="rose"
+        color="red"
         variant="solid"
         label="Malt - Freelance"
         :trailing="false"

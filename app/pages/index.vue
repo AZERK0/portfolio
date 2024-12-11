@@ -39,7 +39,8 @@ useSeoMeta({
 
       <div class="relative flex justify-end">
         <div
-          class="portrait-background absolute w-4/5 h-full rounded-full mix-blend-difference bg-"
+          class="absolute w-4/5 h-full rounded-full"
+          style="backdrop-filter: invert(0.05) grayscale(0.5)"
         />
         <NuxtImg
           src="/portrait.webp"
@@ -153,25 +154,20 @@ useSeoMeta({
       </UBlogList>
     </ULandingSection>
 
-    <ULandingSection class="bg-primary-50 dark:bg-primary-400 dark:bg-opacity-10">
+    <ULandingSection class="relative overflow-hidden bg-primary-50 dark:bg-primary-400 dark:bg-opacity-10">
       <ULandingCTA
         v-bind="page.cta"
         :card="false"
       />
+      <div class="absolute top-1/2 left-1/2 h-4/5 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-100 blur-sm mix-blend-difference pointer-events-none spotlight" />
     </ULandingSection>
   </div>
 </template>
 
-<style scoped>
-.hero {
-  width: 100%;
-  height: 100%;
-  min-height: 100vh;
-  position: relative;
-  display: flex;
-  place-content: center;
-  place-items: center;
-  --stripes: repeating-linear-gradient(
+<style>
+/* Variables globales */
+:root {
+  --stripes-dark: repeating-linear-gradient(
     100deg,
     black 0%,
     black 7%,
@@ -179,39 +175,7 @@ useSeoMeta({
     transparent 12%,
     black 16%
   );
-
-  --rainbow: repeating-linear-gradient(
-    100deg,
-    #2b2eff 10%,
-    #f3450b 15%,
-    #2b2eff 20%,
-    #0f0278 25%,
-    #2b2eff 30%
-  );
-  background-image: var(--stripes), var(--rainbow);
-  background-size: 300%, 200%;
-  background-position: 50% 50%, 50% 50%;
-
-  opacity: 0.7;
-  filter: blur(10px);
-
-  mask-image: radial-gradient(ellipse at 100% 0%, black 40%, transparent 70%);
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: var(--stripes), var(--rainbow);
-    background-size: 200%, 100%;
-    animation: smoothBg 60s linear infinite;
-    background-attachment: fixed;
-    mix-blend-mode: difference;
-  }
-}
-
-.light .hero {
-  filter: invert(1);
-
-  --stripes: repeating-linear-gradient(
+  --stripes-light: repeating-linear-gradient(
     100deg,
     white 0%,
     white 7%,
@@ -219,23 +183,25 @@ useSeoMeta({
     transparent 12%,
     white 16%
   );
+  --rainbow-dark: repeating-linear-gradient(
+    100deg,
+    #2b2eff 10%,
+    #f3450b 15%,
+    #2b2eff 20%,
+    #0f0278 25%,
+    #2b2eff 30%
+  );
+  --rainbow-light: repeating-linear-gradient(
+    100deg,
+    #545300 10%,
+    #0880a8 15%,
+    #545300 20%,
+    #a6b05d 25%,
+    #545300 30%
+  );
 }
 
-.content {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.portrait-background {
-  background: #643500
-}
-
-.dark .portrait-background {
-  background: #9296ff
-}
-
+/* Animation keyframes */
 @keyframes smoothBg {
   from {
     background-position: 50% 50%, 50% 50%;
@@ -245,9 +211,110 @@ useSeoMeta({
   }
 }
 
+@keyframes spotlight-animation {
+  0% {
+    top: 50%;
+    left: 50%;
+    scale: 1;
+    filter: blur(8px);
+  }
+  10% {
+    filter: blur(24px);
+  }
+  20% {
+    top: 5%;
+    left: 35%;
+    scale: 0.6;
+  }
+  50% {
+    top: 75%;
+    left: 65%;
+    scale: 0.8;
+    filter: blur(16px);
+  }
+  70% {
+    top: 60%;
+    left: 30%;
+    scale: 0.6;
+    filter: blur(24px);
+  }
+  100% {
+    top: 50%;
+    left: 50%;
+    scale: 1;
+    filter: blur(8px);
+  }
+}
+
+/* Section Hero */
+.hero {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  background-image: var(--stripes-dark), var(--rainbow-dark);
+  background-size: 300%, 200%;
+  background-position: 50% 50%, 50% 50%;
+  opacity: 0.7;
+  filter: blur(10px) opacity(50%) saturate(200%);;
+  mask-image: radial-gradient(ellipse at 100% 0%, black 40%, transparent 70%);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--stripes-dark), var(--rainbow-dark);
+  background-size: 200%, 100%;
+  background-attachment: fixed;
+  animation: smoothBg 60s linear infinite;
+  mix-blend-mode: difference;
+}
+
+.light .hero {
+  filter: blur(10px) invert(100%);
+  background-image: var(--stripes-dark), var(--rainbow-light);
+}
+
+.light .hero::after {
+  background-image: var(--stripes-dark), var(--rainbow-light);
+}
+
+/* Section Content */
+.content {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Section Pricing Background */
 .pricing-bg {
-  background:
-    linear-gradient(180deg, transparent 82%, rgba(9,9,11,1) 100%),
-    radial-gradient(circle at 50% 90%, #f3450b 10%, rgba(43, 46, 255, 0.5) 30%, transparent 40%);
+  background: linear-gradient(180deg, transparent 82%, rgb(9, 9, 11) 100%),
+  radial-gradient(
+    circle at 50% 90%,
+    #f3450b 10%,
+    rgba(43, 46, 255, 0.5) 30%,
+    transparent 40%
+  );
+}
+
+.light .pricing-bg {
+  background: linear-gradient(180deg, transparent 82%, rgb(250, 250, 250) 100%),
+  radial-gradient(
+    circle at 50% 90%,
+    #f3450b 10%,
+    rgba(43, 46, 255, 0.5) 30%,
+    transparent 40%
+  );
+}
+
+/* Section Spotlight */
+.spotlight {
+  animation: spotlight-animation 6.5s ease-in-out infinite;
+  aspect-ratio: 1 / 1;
 }
 </style>
