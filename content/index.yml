@@ -82,7 +82,7 @@ projects:
       description: |
         Marketplace dédiée aux grossistes et aux restaurateurs :<br>
           - Permet aux restaurateurs, grâce à l'IA et à des outils de recherche, de trouver les grossistes les mieux adaptés à leurs besoins spécifiques et les plus économiques<br>
-          - Offre aux grossistes la possibilité d'augmenter leur visibilité et d'attirer de nouveaux clientsMarketplace
+          - Offre aux grossistes la possibilité d'augmenter leur visibilité et d'attirer de nouveaux clients
       image: /projects/grossify/home.webp
       badge:
         label: Nouveau
@@ -109,10 +109,10 @@ projects:
       badge:
         label: Perso
         color: blue
-      date: Jul., 2022 - Fev, 2024
+      date: Jul., 2022 - Fév, 2024
     - title: MiniShell (C)
       description: |
-        Minishell : Développement d’un interpréteur de commandes Unix :<br>
+        Minishell : Développement d’un interpréteur de commandes UNIX :<br>
           - Exécution de toutes les commandes Unix standard, avec chemins relatifs/absolus, ainsi que leurs options spécifiques<br>
           - Support des fonctionnalités avancées telles que les redirections (>, <, >>), les pipes (|), et la gestion des variables d’environnement<br>
         Ce projet repose sur une implémentation bas niveau en C, utilisant des appels système pour manipuler les processus, gérer les entrées/sorties et coordonner efficacement les différentes fonctionnalités.

@@ -1,42 +1,31 @@
 <script setup lang="ts">
-const links = [{
-  label: 'Resources',
-  children: [{
-    label: 'Help center'
-  }, {
-    label: 'Docs'
-  }, {
-    label: 'Roadmap'
-  }, {
-    label: 'Changelog'
-  }]
-}, {
-  label: 'Features',
-  children: [{
-    label: 'Affiliates'
-  }, {
-    label: 'Portal'
-  }, {
-    label: 'Jobs'
-  }, {
-    label: 'Sponsors'
-  }]
-}, {
-  label: 'Company',
-  children: [{
-    label: 'About'
-  }, {
-    label: 'Pricing'
-  }, {
-    label: 'Careers'
-  }, {
-    label: 'Blog'
-  }]
-}]
+const links = [
+  {
+    label: 'Sections',
+    children: [{
+      label: 'Études',
+      to: '#studies'
+    }, {
+      label: 'Tarifs',
+      to: '#pricing'
+    }, {
+      label: 'Projets',
+      to: '#projects'
+    }]
+  },
+  {
+    label: 'Contact',
+    children: [{
+      label: 'raph.chrp@gmail.com',
+      to: 'mailto:raph.chrp@gmail.com'
+    }, {
+      label: 'France, Lyon'
+    }]
+  }
+]
 
 const toast = useToast()
 
-const email = ref('')
 const loading = ref(false)
 
 function onSubmit() {
@@ -59,30 +48,13 @@ function onSubmit() {
       <UFooterColumns :links="links">
         <template #right>
           <form @submit.prevent="onSubmit">
-            <UFormGroup
-              label="Subscribe to our newsletter"
-              :ui="{ container: 'mt-3' }"
-            >
-              <UInput
-                v-model="email"
-                type="email"
-                placeholder="Enter your email"
-                :ui="{ icon: { trailing: { pointer: '' } } }"
-                required
-                size="xl"
-                autocomplete="off"
-                class="max-w-sm"
-              >
-                <template #trailing>
-                  <UButton
-                    type="submit"
-                    size="xs"
-                    :label="loading ? 'Subscribing' : 'Subscribe'"
-                    :loading="loading"
-                  />
-                </template>
-              </UInput>
-            </UFormGroup>
+            <UButton
+              label="Me contacter"
+              variant="outline"
+              color="white"
+              block
+              to="?contactPopup=true"
+            />
           </form>
         </template>
       </UFooterColumns>
@@ -98,7 +70,7 @@ function onSubmit() {
       <UColorModeButton size="sm" />
 
       <UButton
-        to="https://github.com/nuxt-ui-pro/landing"
+        to="https://github.com/AZERK0"
         target="_blank"
         icon="i-simple-icons-github"
         aria-label="GitHub"
