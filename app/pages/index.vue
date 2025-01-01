@@ -104,7 +104,13 @@ useSeoMeta({
           <UDivider
             v-if="index < page.studies.items.length - 1"
             icon="i-heroicons-arrow-right"
-            class="w-20"
+            class="w-20 max-sm:hidden"
+          />
+          <UDivider
+            v-if="index < page.studies.items.length - 1"
+            icon="i-heroicons-arrow-down"
+            class="h-20 sm:hidden"
+            orientation="vertical"
           />
         </template>
       </div>
