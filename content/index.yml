@@ -17,7 +17,7 @@ hero:
       color: gray
       to: ?contactPopup=true
 logos:
-  title: Technologies utilisées
+  title: Technologies maîtrisées
   icons:
     - name: i-simple-icons-angular
       text: Angular

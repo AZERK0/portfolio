@@ -18,7 +18,6 @@ useSeoMeta({
       :links="page.hero.links"
       orientation="horizontal"
       :ui="{ title: 'text-5xl font-black tracking-tight text-white mix-blend-difference sm:text-7xl' }"
-      class="content"
     >
       <template #headline>
         <UBadge
@@ -37,16 +36,12 @@ useSeoMeta({
         </UBadge>
       </template>
 
-      <div class="relative flex justify-end">
-        <div
-          class="absolute w-4/5 h-full rounded-full"
-          style="backdrop-filter: invert(0.05) grayscale(0.5)"
-        />
+      <div class="relative flex justify-center lg:justify-end">
         <NuxtImg
           src="/portrait.webp"
           format="webp"
           alt="Raphael Charpentier"
-          class="w-4/5 h-auto border-2 border-gray-600 rounded-full drop-shadow-lg object-contain"
+          class="md:w-3/4 lg:w-11/12 lg:-mt-32 lg:-mb-44 portrait"
         />
       </div>
 
@@ -54,7 +49,7 @@ useSeoMeta({
         :title="page.logos.title"
         align="center"
         :ui="{ images: 'mx-auto mt-10 flex flex-wrap items-center justify-center gap-8' }"
-        class="sm:col-span-2"
+        class="lg:col-span-2"
       >
         <UTooltip
           v-for="icon in page.logos.icons"
@@ -91,7 +86,7 @@ useSeoMeta({
           >
             <ULandingCard
               v-bind="item"
-              :ui="{ icon: { base: 'w-20 h-20 -my-7 flex-shrink-0 text-gray-900 dark:text-white' } }"
+              :ui="{ icon: { base: 'w-20 h-20 -my-7 flex-shrink-0 text-gray-900 dark:text-white grayscale' } }"
               class="h-full"
               orientation="horizontal"
             >
@@ -251,7 +246,7 @@ useSeoMeta({
   width: 100%;
   height: 100%;
   min-height: 100vh;
-  position: relative;
+  position: absolute;
   display: flex;
   place-content: center;
   place-items: center;
@@ -283,12 +278,8 @@ useSeoMeta({
   background-image: var(--stripes-dark), var(--rainbow-light);
 }
 
-/* Section Content */
-.content {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+.portrait {
+  mask-image: linear-gradient(black 90%, transparent 100%);
 }
 
 /* Section Pricing Background */
