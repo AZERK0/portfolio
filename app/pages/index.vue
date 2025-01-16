@@ -34,6 +34,9 @@ function filteredProjects() {
     project => projectCategory.value.id === 'all' || projectCategory.value.id === project.category
   )
 }
+
+const openSlideOver = ref(false)
+const slideOverProject = ref(null)
 </script>
 
 <template>
@@ -185,12 +188,87 @@ function filteredProjects() {
             v-for="(project, index) in filteredProjects()"
             :key="index"
             v-bind="project"
+            class="cursor-pointer"
+            :ui="{ title: 'text-gray-900 dark:text-white text-xl font-semibold text-wrap group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors duration-200' }"
+            @click="openSlideOver = true; slideOverProject = project"
           >
             <template #description>
-              <span v-html="project.description" />
+              <span />
             </template>
           </UBlogPost>
         </UBlogList>
+
+        <USlideover
+          v-model="openSlideOver"
+          :ui="{ width: 'w-screen max-w-xl' }"
+        >
+          <div class="p-4 flex-1 overflow-auto">
+            <UCard
+              class="flex flex-col flex-1"
+              :ui="{ body: { base: 'flex-1' }, ring: '', divide: 'divide-y divide-gray-100 dark:divide-gray-800' }"
+            >
+              <template #header>
+                <div class="flex items-start justify-between">
+                  <div class="flex flex-col gap-4">
+                    <h1 class="text-2xl font-bold">
+                      {{ slideOverProject.title }}
+                    </h1>
+
+                    <time class="text-sm text-gray-500 dark:text-gray-400 font-medium pointer-events-none">
+                      {{ slideOverProject.date }}
+                    </time>
+
+                    <UBadge
+                      v-if="slideOverProject.badge"
+                      v-bind="slideOverProject.badge"
+                      class="w-fit"
+                      variant="soft"
+                      size="md"
+                    />
+                  </div>
+
+                  <UButton
+                    color="gray"
+                    variant="ghost"
+                    icon="i-heroicons-x-mark-20-solid"
+                    @click="openSlideOver = false"
+                  />
+                </div>
+              </template>
+
+              <div class="flex flex-col gap-8 flex-1">
+                <NuxtImg
+                  v-if="!slideOverProject.otherImages"
+                  :src="slideOverProject.image"
+                  format="webp"
+                  class="w-full rounded-lg"
+                />
+
+                <UCarousel
+                  v-if="slideOverProject.otherImages"
+                  v-slot="{ item }"
+                  :items="[slideOverProject.image].concat(slideOverProject.otherImages)"
+                  :ui="{ item: 'basis-full' }"
+                  :prev-button="{ color: 'gray' }"
+                  :next-button="{ color: 'gray' }"
+                  class="rounded-lg overflow-hidden"
+                  arrows
+                >
+                  <NuxtImg
+                    :src="item"
+                    class="w-full"
+                    draggable="false"
+                    format="webp"
+                  />
+                </UCarousel>
+
+                <strong>Description</strong>
+
+                <span v-html="slideOverProject.description" />
+              </div>
+            </UCard>
+          </div>
+        </USlideover>
       </div>
     </ULandingSection>
 

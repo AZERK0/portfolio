@@ -2,7 +2,7 @@
   <div class="flex flex-col gap-4">
     <div class="grid grid-cols-2 gap-2">
       <UButton
-        :ui="{ rounded: 'rounded-md', font: 'font-extrabold' }"
+        :ui="{ rounded: 'rounded-md' }"
         icon="i-simple-icons-linkedin"
         size="lg"
         color="blue"
@@ -13,7 +13,7 @@
         target="_blank"
       />
       <UButton
-        :ui="{ rounded: 'rounded-md', font: 'font-extrabold' }"
+        :ui="{ rounded: 'rounded-md' }"
         icon="i-simple-icons-github"
         size="lg"
         color="gray"
@@ -25,7 +25,7 @@
       />
       <UButton
         block
-        :ui="{ rounded: 'rounded-md', font: 'font-extrabold' }"
+        :ui="{ rounded: 'rounded-md' }"
         icon="i-simple-icons-malt"
         size="lg"
         color="red"
@@ -44,7 +44,7 @@
 
     <UButton
       block
-      :ui="{ rounded: 'rounded-md', font: 'font-extrabold' }"
+      :ui="{ rounded: 'rounded-md' }"
       icon="i-heroicons-envelope-solid"
       size="lg"
       variant="solid"
@@ -54,7 +54,7 @@
     />
     <UButton
       block
-      :ui="{ rounded: 'rounded-md', font: 'font-extrabold' }"
+      :ui="{ rounded: 'rounded-md' }"
       icon="i-heroicons-phone-solid"
       size="lg"
       color="white"

@@ -85,9 +85,15 @@ projects:
             - Mise en avant de ses créations, avec la possibilité de mettre a jour la galerie dans un front contentful<br>
             - Formulaire de contact
       image: /projects/atelier-sophie-sylvestre/home.webp
+      otherImages:
+        - /projects/atelier-sophie-sylvestre/gallery.webp
+        - /projects/atelier-sophie-sylvestre/interventions.webp
+        - /projects/atelier-sophie-sylvestre/studies.webp
+        - /projects/atelier-sophie-sylvestre/contact.webp
       badge:
         label: Freelance
         color: yellow
+        variant: soft
       category: freelance
       date: Dec., 2024
     - title: Grossify (Nuxt.js, Adonis.js)
@@ -99,6 +105,7 @@ projects:
       badge:
         label: Nouveau
         color: green
+        variant: soft
       category: perso
       date: Août, 2024 - Aujourd'hui
     - title: GT3 Event - 10K joueurs (Python)
@@ -108,9 +115,12 @@ projects:
           - Choix de la piste par vote<br>
           - Gestion des inscriptions, des courses et des classements
       image: /projects/assetto-corsa-event/gt3-grand-prix.webp
+      otherImages:
+        - /projects/assetto-corsa-event/server.webp
       badge:
         label: Perso
         color: blue
+        variant: soft
       category: perso
       date: Oct., 2024
     - title: Finalyzing (Angular, Flask)
@@ -120,9 +130,15 @@ projects:
           - Analyse de ses portefeuilles d’investissement grâce à des statistiques puissantes et variées<br>
           - Consultation des données macroéconomiques actuelles et historiques de +215 pays
       image: /projects/finalyzing/home.webp
+      otherImages:
+        - /projects/finalyzing/markets.webp
+        - /projects/finalyzing/portfolios.webp
+        - /projects/finalyzing/macro.webp
+        - /projects/finalyzing/quote.webp
       badge:
         label: Perso
         color: blue
+        variant: soft
       category: perso
       date: Jul., 2022 - Fév, 2024
     - title: MiniShell (C)
@@ -135,6 +151,7 @@ projects:
       badge:
         label: Epitech
         color: red
+        variant: soft
       category: epitech
       date: Mars, 2024
     - title: NeuraStock A.I. (Python, TensorFlow, PostgreSQL)
@@ -147,6 +164,7 @@ projects:
       badge:
         label: Perso
         color: blue
+        variant: soft
       category: perso
       date: Mai, 2020 - Sept., 2021
 cta:
