@@ -78,6 +78,18 @@ projects:
   title: Mes projets
   description: Découvrez mes derniers projets dans le développement.
   items:
+    - title: Atelier Sophie Sylvestre (Nuxt.js, Contentful)
+      description: |
+        Site web pour une restauratrice et concervative de tableaux :<br>
+            - Présentation de son parcours et de son atelier<br>
+            - Mise en avant de ses créations, avec la possibilité de mettre a jour la galerie dans un front contentful<br>
+            - Formulaire de contact
+      image: /projects/atelier-sophie-sylvestre/home.webp
+      badge:
+        label: Freelance
+        color: yellow
+      category: freelance
+      date: Dec., 2024
     - title: Grossify (Nuxt.js, Adonis.js)
       description: |
         Marketplace dédiée aux grossistes et aux restaurateurs :<br>
@@ -87,6 +99,7 @@ projects:
       badge:
         label: Nouveau
         color: green
+      category: perso
       date: Août, 2024 - Aujourd'hui
     - title: GT3 Event - 10K joueurs (Python)
       description: |
@@ -94,10 +107,11 @@ projects:
           - Permet aux joueurs de participer à des événements de course automobile en ligne<br>
           - Choix de la piste par vote<br>
           - Gestion des inscriptions, des courses et des classements
-      image: /projects/assetto-corsa-event/server.webp
+      image: /projects/assetto-corsa-event/gt3-grand-prix.webp
       badge:
         label: Perso
         color: blue
+      category: perso
       date: Oct., 2024
     - title: Finalyzing (Angular, Flask)
       description: |
@@ -109,6 +123,7 @@ projects:
       badge:
         label: Perso
         color: blue
+      category: perso
       date: Jul., 2022 - Fév, 2024
     - title: MiniShell (C)
       description: |
@@ -120,6 +135,7 @@ projects:
       badge:
         label: Epitech
         color: red
+      category: epitech
       date: Mars, 2024
     - title: NeuraStock A.I. (Python, TensorFlow, PostgreSQL)
       description: |
@@ -131,6 +147,7 @@ projects:
       badge:
         label: Perso
         color: blue
+      category: perso
       date: Mai, 2020 - Sept., 2021
 cta:
   title: Envie de travailler ensemble ?

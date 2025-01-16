@@ -7,6 +7,33 @@ useSeoMeta({
   description: page.value.description,
   ogDescription: page.value.description
 })
+
+const projectCategoies = [
+  {
+    id: 'all',
+    label: 'Toutes catégories'
+  },
+  {
+    id: 'perso',
+    label: 'Personnel'
+  },
+  {
+    id: 'freelance',
+    label: 'Freelance'
+  },
+  {
+    id: 'epitech',
+    label: 'Epitech'
+  }
+]
+
+const projectCategory = ref(projectCategoies[0])
+
+function filteredProjects() {
+  return page.value.projects.items.filter(
+    project => projectCategory.value.id === 'all' || projectCategory.value.id === project.category
+  )
+}
 </script>
 
 <template>
@@ -138,21 +165,33 @@ useSeoMeta({
       :title="page.projects.title"
       :description="page.projects.description"
     >
-      <UBlogList
-        id="projects"
-        orientation="horizontal"
-        class="scroll-mt-[calc(var(--header-height)+140px+128px)]"
-      >
-        <UBlogPost
-          v-for="(project, index) in page.projects.items"
-          :key="index"
-          v-bind="project"
+      <div class="flex flex-col gap-6">
+        <UFormGroup
+          size="xl"
         >
-          <template #description>
-            <span v-html="project.description" />
-          </template>
-        </UBlogPost>
-      </UBlogList>
+          <USelectMenu
+            v-model="projectCategory"
+            :options="projectCategoies"
+            class="w-60"
+          />
+        </UFormGroup>
+
+        <UBlogList
+          id="projects"
+          orientation="horizontal"
+          class="scroll-mt-[calc(var(--header-height)+140px+128px)]"
+        >
+          <UBlogPost
+            v-for="(project, index) in filteredProjects()"
+            :key="index"
+            v-bind="project"
+          >
+            <template #description>
+              <span v-html="project.description" />
+            </template>
+          </UBlogPost>
+        </UBlogList>
+      </div>
     </ULandingSection>
 
     <ULandingSection class="relative overflow-hidden bg-primary-50 dark:bg-primary-400 dark:bg-opacity-10">
