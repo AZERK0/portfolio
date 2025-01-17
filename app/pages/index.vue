@@ -147,23 +147,6 @@ const slideOverProject = ref(null)
     </ULandingSection>
 
     <ULandingSection
-      :title="page.pricing.title"
-      :description="page.pricing.description"
-      :headline="page.pricing.headline"
-      class="pricing-bg"
-    >
-      <div
-        id="pricing"
-        class="flex justify-center scroll-mt-[calc(var(--header-height)+140px+128px)]"
-      >
-        <UPricingCard
-          v-bind="page.pricing.plan"
-          class="md:w-1/2 lg:w-1/3"
-        />
-      </div>
-    </ULandingSection>
-
-    <ULandingSection
       :headline="page.projects.headline"
       :title="page.projects.title"
       :description="page.projects.description"
@@ -193,7 +176,9 @@ const slideOverProject = ref(null)
             @click="openSlideOver = true; slideOverProject = project"
           >
             <template #description>
-              <span />
+              <i>
+                Voir le projet
+              </i>
             </template>
           </UBlogPost>
         </UBlogList>
@@ -247,7 +232,11 @@ const slideOverProject = ref(null)
                 <UCarousel
                   v-if="slideOverProject.otherImages"
                   v-slot="{ item }"
-                  :items="[slideOverProject.image].concat(slideOverProject.otherImages)"
+                  :items="[
+                    ...(slideOverProject.video ? [slideOverProject.video] : []),
+                    slideOverProject.image,
+                    ...slideOverProject.otherImages
+                  ]"
                   :ui="{ item: 'basis-full' }"
                   :prev-button="{ color: 'gray' }"
                   :next-button="{ color: 'gray' }"
@@ -255,12 +244,35 @@ const slideOverProject = ref(null)
                   arrows
                 >
                   <NuxtImg
+                    v-if="item.includes('webp')"
                     :src="item"
                     class="w-full"
                     draggable="false"
                     format="webp"
                   />
+                  <video
+                    v-else
+                    controls
+                    class="w-full rounded-lg"
+                    autoplay
+                  >
+                    <source
+                      :src="slideOverProject.video"
+                      type="video/mp4"
+                    >
+                  </video>
                 </UCarousel>
+
+                <UButton
+                  v-if="slideOverProject.button"
+                  v-bind="slideOverProject.button"
+                  block
+                />
+
+                <UAlert
+                  v-if="slideOverProject.alert"
+                  v-bind="slideOverProject.alert"
+                />
 
                 <strong>Description</strong>
 
@@ -269,6 +281,23 @@ const slideOverProject = ref(null)
             </UCard>
           </div>
         </USlideover>
+      </div>
+    </ULandingSection>
+
+    <ULandingSection
+      :title="page.pricing.title"
+      :description="page.pricing.description"
+      :headline="page.pricing.headline"
+      class="pricing-bg"
+    >
+      <div
+        id="pricing"
+        class="flex justify-center scroll-mt-[calc(var(--header-height)+140px+128px)]"
+      >
+        <UPricingCard
+          v-bind="page.pricing.plan"
+          class="md:w-1/2 lg:w-1/3"
+        />
       </div>
     </ULandingSection>
 

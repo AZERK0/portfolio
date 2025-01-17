@@ -95,6 +95,10 @@ projects:
         color: yellow
         variant: soft
       category: freelance
+      button:
+        label: Voir le site
+        to: https://atelier-sophie-sylvestre.fr
+        target: _blank
       date: Dec., 2024
     - title: Grossify (Nuxt.js, Adonis.js)
       description: |
@@ -107,10 +111,16 @@ projects:
         color: green
         variant: soft
       category: perso
+      alert:
+        icon: i-heroicons-exclamation-circle
+        title: En cours de développement
+        description: Le site est actuellement en cours de développement et sera bientôt disponible.
+        color: yellow
+        variant: soft
       date: Août, 2024 - Aujourd'hui
     - title: GT3 Event - 10K joueurs (Python)
       description: |
-        Événements de course hebdomadaires, gérés par un script, pour une communauté Assetto Corsa de 10 000 joueurs :<br>
+        Événements de course hebdomadaires, gérés par un script, pour une communauté Assetto Corsa Discord de 10 000 joueurs :<br>
           - Permet aux joueurs de participer à des événements de course automobile en ligne<br>
           - Choix de la piste par vote<br>
           - Gestion des inscriptions, des courses et des classements
@@ -122,6 +132,10 @@ projects:
         color: blue
         variant: soft
       category: perso
+      button:
+        label: Acceder au Discord
+        to: https://discord.gg/BHUFmjJUTN
+        target: _blank
       date: Oct., 2024
     - title: Finalyzing (Angular, Flask)
       description: |
@@ -134,12 +148,22 @@ projects:
         - /projects/finalyzing/markets.webp
         - /projects/finalyzing/portfolios.webp
         - /projects/finalyzing/macro.webp
-        - /projects/finalyzing/quote.webp
+      video: /projects/finalyzing/demo.mp4
       badge:
         label: Perso
         color: blue
         variant: soft
       category: perso
+      button:
+          label: Voir le site
+          to: https://finalyzing.com
+          target: _blank
+      alert:
+        icon: i-heroicons-exclamation-circle
+        title: Accès restreint
+        description: Pour des raisons de couts de maintenance, l'accès à la plateforme est actuellement restreint à certaines entreprises et données. Des chargements infinis peuvent donc être observés.
+        color: red
+        variant: soft
       date: Jul., 2022 - Fév, 2024
     - title: MiniShell (C)
       description: |
