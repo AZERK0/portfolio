@@ -301,7 +301,7 @@ const slideOverProject = ref(null)
       </div>
     </ULandingSection>
 
-    <ULandingSection class="relative overflow-hidden bg-primary-50 dark:bg-primary-400 dark:bg-opacity-10">
+    <ULandingSection class="relative overflow-hidden bg-indigo-100 dark:bg-indigo-400 dark:bg-opacity-10">
       <ULandingCTA
         v-bind="page.cta"
         :card="false"
@@ -363,10 +363,10 @@ const slideOverProject = ref(null)
     top: 50%;
     left: 50%;
     scale: 1;
-    filter: blur(8px);
+    filter: blur(24px);
   }
   10% {
-    filter: blur(24px);
+    filter: blur(8px);
   }
   20% {
     top: 5%;
@@ -383,13 +383,13 @@ const slideOverProject = ref(null)
     top: 60%;
     left: 30%;
     scale: 0.6;
-    filter: blur(24px);
+    filter: blur(8px);
   }
   100% {
     top: 50%;
     left: 50%;
     scale: 1;
-    filter: blur(8px);
+    filter: blur(24px);
   }
 }
 
