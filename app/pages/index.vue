@@ -285,6 +285,29 @@ const slideOverProject = ref(null)
     </ULandingSection>
 
     <ULandingSection
+      :title="page.experience.title"
+      :description="page.experience.description"
+      :headline="page.experience.headline"
+    >
+      <div
+        class="flex flex-col items-center gap-8 scroll-mt-[calc(var(--header-height)+140px+128px)]"
+      >
+        <ULandingCard
+          v-for="(item, index) in page.experience.items"
+          :key="index"
+          v-bind="item"
+          :ui="{ icon: { base: 'w-24 h-24 -my-7 flex-shrink-0 text-gray-900 dark:text-white grayscale' } }"
+          class="h-full w-full max-w-xl"
+          orientation="horizontal"
+        >
+          <template #description>
+            <span v-html="item.description" />
+          </template>
+        </ULandingCard>
+      </div>
+    </ULandingSection>
+
+    <ULandingSection
       :title="page.pricing.title"
       :description="page.pricing.description"
       :headline="page.pricing.headline"

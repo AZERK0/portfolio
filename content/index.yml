@@ -54,25 +54,6 @@ studies:
         - Pédagogie axée sur l'apprentissage par projet.
       icon: my-icon:epitech
       image: /studies/epitech.webp
-pricing:
-  headline: Tarifs
-  title: Quels sont mes tarifs ?
-  description: Contactez-moi pour obtenir un devis personnalisé.
-  plan:
-    title: Freelance Web
-    description: Développement de sites web et d'applications web sur mesure.
-    price: 250€
-    cycle: /jour
-    highlight: true
-    align: top
-    button:
-      label: Me contacter
-      to: ?contactPopup=true
-    features:
-      - Conception
-      - Développement
-      - Tests
-      - Déploiement
 projects:
   headline: Projets
   title: Mes projets
@@ -191,6 +172,36 @@ projects:
         variant: soft
       category: perso
       date: Mai, 2020 - Sept., 2021
+experience:
+  headline: Expérience
+  title: Expérience professionnelle
+  description: J'ai eu l'opportunité de travailler dans diverses entreprises, ce qui m'a permis de développer mes compétences en développement web et de développer mon travail en équipe.
+  items:
+    - title: Développeur Full Stack
+      description: |
+        Visiativ · Stage<br>
+        juil. 2024 - déc. 2024 · 6 mois<br>
+        Lyon, Auvergne-Rhône-Alpes, France · Sur site
+      icon: my-icon:visiativ
+pricing:
+  headline: Tarifs
+  title: Quels sont mes tarifs ?
+  description: Contactez-moi pour obtenir un devis personnalisé.
+  plan:
+    title: Freelance Web
+    description: Développement de sites web et d'applications web sur mesure.
+    price: 250€
+    cycle: /jour
+    highlight: true
+    align: top
+    button:
+      label: Me contacter
+      to: ?contactPopup=true
+    features:
+      - Conception
+      - Développement
+      - Tests
+      - Déploiement
 cta:
   title: Envie de travailler ensemble ?
   description: Contactez-moi dès maintenant.
