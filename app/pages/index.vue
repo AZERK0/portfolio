@@ -308,6 +308,22 @@ const slideOverProject = ref(null)
     </ULandingSection>
 
     <ULandingSection
+      :title="page.about.title"
+      :headline="page.about.headline"
+    >
+      <div class="flex flex-col items-center gap-4">
+        <p
+          class="text-center"
+          v-html="page.about.content"
+        />
+        <i
+          class="text-center text-2xl font-bold mt-8"
+          v-html="page.about.quote"
+        />
+      </div>
+    </ULandingSection>
+
+    <ULandingSection
       :title="page.pricing.title"
       :description="page.pricing.description"
       :headline="page.pricing.headline"

@@ -202,6 +202,18 @@ pricing:
       - Développement
       - Tests
       - Déploiement
+about:
+  headline: À propos
+  title: Qui suis-je ?
+  image: /about/me.webp
+  content: |
+    En 2018, au collège, je découvre la programmation en codant sur ma calculatrice durant les permanances. Je découvre qu'avec l'informatique, il est possible de créer a partir de rien, et j'aime ca. Frustré par ses limites, je passe au Python et réalise mes premiers projets. Avec un ami, lui passionné par la finance, nous créons NeuraStock A.I., une IA d'analyse boursière, bien avant l'explosion de l'IA. Ce projet m'initie à la finance et à l'IA.<br><br>
+    Je développe ensuite Finalyzing, une suite d'outils d'analyse financière en ligne, où je me spécialise en développement web Full-Stack. Ce projet, réalisé avec peu de ressources, est le plus formateur pour moi.<br><br>
+    Aujourd'hui étudiant à Epitech, je me perfectionne en création de sites et d'applications modernes, alliant rigueur et passion pour le développement web.<br><br>
+    La chose la plus importante que j'ai pus apprendre durant ces années est que :
+  quote: |
+    "Le perfectionnisme nourrit la soif de connaissance et nous pousse à évoluer,<br>
+    tandis que la quête de solutions rapides et faciles nous condamne à la stagnation."
 cta:
   title: Envie de travailler ensemble ?
   description: Contactez-moi dès maintenant.
