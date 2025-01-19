@@ -151,7 +151,10 @@ const slideOverProject = ref(null)
       :title="page.projects.title"
       :description="page.projects.description"
     >
-      <div class="flex flex-col gap-6">
+      <div
+        id="projects"
+        class="flex flex-col gap-6 scroll-mt-[calc(var(--header-height)+140px+128px)]"
+      >
         <UFormGroup
           size="xl"
         >
@@ -162,11 +165,7 @@ const slideOverProject = ref(null)
           />
         </UFormGroup>
 
-        <UBlogList
-          id="projects"
-          orientation="horizontal"
-          class="scroll-mt-[calc(var(--header-height)+140px+128px)]"
-        >
+        <UBlogList orientation="horizontal">
           <UBlogPost
             v-for="(project, index) in filteredProjects()"
             :key="index"
@@ -290,6 +289,7 @@ const slideOverProject = ref(null)
       :headline="page.experience.headline"
     >
       <div
+        id="experiences"
         class="flex flex-col items-center gap-8 scroll-mt-[calc(var(--header-height)+140px+128px)]"
       >
         <ULandingCard
@@ -310,8 +310,28 @@ const slideOverProject = ref(null)
     <ULandingSection
       :title="page.about.title"
       :headline="page.about.headline"
+      :links="page.about.links"
+      class="about-bg"
     >
-      <div class="flex flex-col items-center gap-4">
+      <div
+        id="about"
+        class="flex flex-col items-center gap-4 scroll-mt-[calc(var(--header-height)+140px+128px)]"
+      >
+        <div class="grid grid-cols-3 divide-x divide-primary-500 dark:divide-primary-400 bg-primary-500 dark:bg-primary-400 bg-opacity-5 dark:bg-opacity-5 p-2 mb-8 rounded-lg backdrop-blur-sm ring-1 ring-primary-500 dark:ring-primary-400 dark:ring-opacity-50">
+          <div class="px-4">
+            <strong>Nom</strong>
+            <p>{{ page.about.info.name }}</p>
+          </div>
+          <div class="px-4">
+            <strong>Âge</strong>
+            <p>{{ new Date().getFullYear() - new Date(page.about.info.birthdate).getFullYear() }} ans</p>
+          </div>
+          <div class="px-4">
+            <strong>Localisation</strong>
+            <p>{{ page.about.info.location }}</p>
+          </div>
+        </div>
+
         <p
           class="text-center"
           v-html="page.about.content"
@@ -471,6 +491,34 @@ const slideOverProject = ref(null)
 
 .portrait {
   mask-image: linear-gradient(black 90%, transparent 100%);
+}
+
+/* Section About Background */
+.dark .about-bg {
+  background-color: #0a091a;
+  background-image:
+    linear-gradient(180deg, transparent 82%, rgb(9, 9, 11) 100%),
+    url("https://www.transparenttextures.com/patterns/cartographer.png");
+}
+
+.light .about-bg {
+  position: relative;
+  background-color: #e8efff;
+  background-image: linear-gradient(180deg, transparent 82%, rgb(250, 250, 250) 100%);
+}
+
+.light .about-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(180deg, transparent 82%, rgb(250, 250, 250) 100%),
+    url("https://www.transparenttextures.com/patterns/cartographer.png");
+  opacity: 0.35;
+  z-index: 1;
+  pointer-events: none;
 }
 
 /* Section Pricing Background */

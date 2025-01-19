@@ -173,7 +173,7 @@ projects:
       category: perso
       date: Mai, 2020 - Sept., 2021
 experience:
-  headline: Expérience
+  headline: Expériences
   title: Expérience professionnelle
   description: J'ai eu l'opportunité de travailler dans diverses entreprises, ce qui m'a permis de développer mes compétences en développement web et de développer mon travail en équipe.
   items:
@@ -205,9 +205,24 @@ pricing:
 about:
   headline: À propos
   title: Qui suis-je ?
-  image: /about/me.webp
+  links:
+    - label: Mes projets
+      to: '#projects'
+      icon: i-heroicons-arrow-right-20-solid
+      size: xl
+      trailing: true
+    - label: Me contacter
+      to: ?contactPopup=true
+      icon: i-heroicons-envelope
+      size: xl
+      color: gray
+  info:
+    name: Raphael Charpentier
+    birthdate: 03/30/2005
+    location: Lyon, France
   content: |
-    En 2018, au collège, je découvre la programmation en codant sur ma calculatrice durant les permanances. Je découvre qu'avec l'informatique, il est possible de créer a partir de rien, et j'aime ca. Frustré par ses limites, je passe au Python et réalise mes premiers projets. Avec un ami, lui passionné par la finance, nous créons NeuraStock A.I., une IA d'analyse boursière, bien avant l'explosion de l'IA. Ce projet m'initie à la finance et à l'IA.<br><br>
+    J’aime partir à la découverte de nouveaux horizons, explorer des lieux qui invitent à l’évasion et me ressourcer loin du quotidien. Prendre soin de moi passe par le sport : la course à pied, le vélo et la musculation m’aident à rester actif et à me sentir bien. Et puis, il y a la musique, une passion intemporelle qui me fait voyager à travers les genres et les époques.<br><br>
+    C'est en 2017, au collège, que je découvre la programmation en codant sur ma calculatrice durant les permanances. Je découvre qu'avec l'informatique, il est possible de créer a partir de rien, et j'aime ca. Frustré par ses limites, je passe au Python et réalise mes premiers projets. Avec un ami, lui passionné par la finance, nous créons NeuraStock A.I., une IA d'analyse boursière, bien avant l'explosion de l'IA. Ce projet m'initie à la finance et à l'IA.<br><br>
     Je développe ensuite Finalyzing, une suite d'outils d'analyse financière en ligne, où je me spécialise en développement web Full-Stack. Ce projet, réalisé avec peu de ressources, est le plus formateur pour moi.<br><br>
     Aujourd'hui étudiant à Epitech, je me perfectionne en création de sites et d'applications modernes, alliant rigueur et passion pour le développement web.<br><br>
     La chose la plus importante que j'ai pus apprendre durant ces années est que :

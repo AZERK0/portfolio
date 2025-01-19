@@ -6,24 +6,36 @@ const links = computed(() => [{
   label: 'Études',
   to: '#studies',
   icon: 'i-heroicons-cube-transparent',
-  active: activeHeadings.value.includes('studies') && !activeHeadings.value.includes('pricing')
-}, {
-  label: 'Tarifs',
-  to: '#pricing',
-  icon: 'i-heroicons-credit-card',
-  active: activeHeadings.value.includes('pricing') && !activeHeadings.value.includes('projects')
+  active: activeHeadings.value.includes('studies') && !activeHeadings.value.includes('projects')
 }, {
   label: 'Projets',
   to: '#projects',
   icon: 'i-heroicons-academic-cap',
-  active: activeHeadings.value.includes('projects')
+  active: activeHeadings.value.includes('projects') && !activeHeadings.value.includes('experiences')
+}, {
+  label: 'Expériences',
+  to: '#experiences',
+  icon: 'i-heroicons-academic-cap',
+  active: activeHeadings.value.includes('experiences') && !activeHeadings.value.includes('about')
+}, {
+  label: 'À propos',
+  to: '#about',
+  icon: 'i-heroicons-academic-cap',
+  active: activeHeadings.value.includes('about') && !activeHeadings.value.includes('pricing')
+}, {
+  label: 'Tarifs',
+  to: '#pricing',
+  icon: 'i-heroicons-credit-card',
+  active: activeHeadings.value.includes('pricing')
 }])
 
 nuxtApp.hooks.hookOnce('page:finish', () => {
   updateHeadings([
     document.querySelector('#studies'),
-    document.querySelector('#pricing'),
-    document.querySelector('#projects')
+    document.querySelector('#projects'),
+    document.querySelector('#experiences'),
+    document.querySelector('#about'),
+    document.querySelector('#pricing')
   ])
 })
 </script>
